@@ -60,8 +60,37 @@ const createFormGroup = ({
 
   const input = createElement('input', inputAttrs)
 
-  if (name === 'heuresortie') {
-    input.value = getCurrentTime()
+  // if (name === 'heuresortie') {
+  //   input.value = getCurrentTime()
+  // }
+
+  switch(name) {
+    case 'heuresortie' :
+      input.value = getCurrentTime();
+      console.log(getCurrentTime())
+      break;
+    case 'firstname' : 
+      input.value = 'Othman';
+      break;
+    case 'lastname' : 
+      input.value = 'Bensaoula';
+      break;
+    case 'birthday' : 
+      input.value = '24/02/1990';
+      break;
+    case 'placeofbirth' : 
+      input.value = 'Fès';
+      break;
+    case 'address' : 
+      input.value = '2 Rue du Général Kleber';
+      break;
+    case 'city' : 
+      input.value = 'Lunéville';
+      break;
+    case 'zipcode' : 
+      input.value = '54300';
+      break;
+    
   }
 
   const validityAttrs = {
@@ -92,8 +121,14 @@ const createReasonField = (reasonData) => {
     id,
     name: 'field-reason',
     value: reasonData.code,
+    checked: false,
   }
+
   const inputReason = createElement('input', inputReasonAttrs)
+
+  if(inputReasonAttrs.value === 'achats') {
+    inputReason.checked = true;
+  }
 
   const labelAttrs = { innerHTML: reasonData.label, className: 'form-checkbox-label', for: id }
   const label = createElement('label', labelAttrs)

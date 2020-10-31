@@ -149,6 +149,7 @@ export function prepareInputs (formInputs, reasonInputs, reasonFieldset, reasonA
   })
 }
 
+
 export function prepareForm () {
   const formInputs = $$('#form-profile input')
   const snackbar = $('#snackbar')
